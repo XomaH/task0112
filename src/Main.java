@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
 
-
-
         checkingTheYea(2020);
         needingApdateOs(2015, 1);
-        System.out.println(calcDeliveryDay(40));
-
-
+        if (calcDeliveryDay(110) != 0) {
+            System.out.println(calcDeliveryDay(110));
+        }else{
+            System.out.println("В Ваш регион доставка не осуществяется");
+        }
     }
 
     private static void checkingTheYea(int year) {
@@ -36,13 +36,13 @@ public class Main {
     private static int calcDeliveryDay(int deliveryDistance) {
         int delDey = 0;
         if (deliveryDistance <= 20) {
-            delDey += 1;
+            delDey = 1;
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
             delDey = 2;
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             delDey = 3;
         } else {
-            System.out.println("Свыше 100 км доставки нет");
+            delDey = 0;
         }
         return delDey;
     }
